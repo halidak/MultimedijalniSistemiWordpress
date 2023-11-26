@@ -38,6 +38,58 @@
 		justify-content: space-between;
 		align-items: center;
 	}
+
+	.your-menu-class {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+	background-color: #8583BD;
+	justify-content: center;
+}
+
+/* Style each menu item */
+.your-menu-class li {
+    margin: 0 40px;
+    position: relative;
+}
+
+/* Style the links in the menu */
+.your-menu-class a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+}
+
+	.your-menu-class a:visited{
+		color: #fff; 
+	}
+
+	/* Style sub-menus */
+	.your-menu-class ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		display: none;
+		background-color: #ef43297e;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Style sub-menu items */
+	.your-menu-class ul li {
+		width: 150px; /* Adjust the width as needed */
+	}
+
+	/* Show sub-menus on hover */
+	.your-menu-class li:hover > ul {
+		display: block;
+	}
 </style>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -53,14 +105,15 @@
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link">
 			<img src="<?php echo $image[0]; ?>" alt="Logo" class="logo">
 		</a>
-		<!-- <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+		<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 		</div>
 		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'menu-1',
-		) );
-	?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+			wp_nav_menu(array(
+				'theme_location' => 'menu-1',
+				'menu_class'     => 'your-menu-class', // Add a custom class to style the menu
+			));
+		?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	
   </header><!-- .site-header -->
  
