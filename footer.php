@@ -11,19 +11,20 @@
 
 ?>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
+       body {
         position: relative;
-        min-height: 100vh;
     }
-
-    .site-footer {
+	.site-footer {
+		margin-top: 100px;
         background-color: #8A70C2;
         color: #fff;
-        padding: 20px;
         width: 100%;
-        position: relative;
+        position: absolute;
+        bottom: 0;
+    }
+
+	main#primary {
+        margin: 20px 0; /* Adjust the margin to create space between content and footer */
     }
 
     .container {
@@ -101,7 +102,11 @@
     </div>
 </footer>
 </div><!-- #page -->
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php wp_footer(); ?>
 
 </body>
