@@ -11,32 +11,95 @@
 
 ?>
 <style>
-	.site-footer{
-		background-color: #8A70C2;
-		bottom: 0;
-		width: 100%;
-		color: blue;
-		padding: 0 20px;
-		position: absolute;
-	}
-	.site-info{
-		margin: auto;
-		display: flex;
-		justify-content: center;
-		
-	}
-	h3{
-		color : #fff;
-	}
+    body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .site-footer {
+        background-color: #8A70C2;
+        color: #fff;
+        padding: 20px;
+        width: 100%;
+        position: relative;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .footer-section {
+        flex: 1;
+        margin: 0 20px;
+    }
+
+    .footer-section h2 {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 10px;
+    }
+
+    .footer-section p {
+        margin-top: 10px;
+    }
+
+    .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .footer-section a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .bottom-bar {
+        background-color: #6A5090;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
 </style>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<h3>Home</h3>
-			</a>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+
+<footer id="footer" class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Travel the world with us.</p>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: info@example.com</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li>
+						<a href="<?php echo esc_url(home_url('/')); ?>">
+							<p>Home</p>
+						</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <div class="container">
+            <p>&copy; 2023 TarvelTheWorld.</p>
+        </div>
+    </div>
+</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
