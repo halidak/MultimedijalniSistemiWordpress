@@ -9,6 +9,40 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+<style>
+/* Style for Population */
+.population {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+/* Style for Land Area */
+.land-area {
+    background-color: #e0e0e0;
+    padding: 10px;
+}
+
+/* Style for Local Time */
+.local-time {
+    background-color: #d0d0d0;
+    padding: 10px;
+}
+
+/* Style for ZIP Codes */
+.zip-codes {
+    background-color: #c0c0c0;
+    padding: 10px;
+}
+
+/* Style for Weather */
+.weather {
+    background-color: #b0b0b0;
+    padding: 10px;
+}
+
+
+
+</style>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -53,27 +87,26 @@
 		);
 		?>
 		<div class="basic">
-			<div class="baking-time">
-				<h2>Population: <?php echo get_field('population'); ?> </h2>
-			</div>
+    <div class="population">
+        <h2>Population: <?php echo get_field('population'); ?> </h2>
+    </div>
 
-			<div class="baking-time">
-				<h2>Land Area: <?php echo get_field('land_area'); ?> </h2>
-			</div>
+    <div class="land-area">
+        <h2>Land Area: <?php echo get_field('land_area'); ?> </h2>
+    </div>
 
-			<div class="baking-time">
-				<h2>Local time: <?php echo get_field('local_time'); ?> </h2>
-			</div>
+    <div class="local-time">
+        <h2>Local time: <?php echo get_field('local_time'); ?> </h2>
+    </div>
 
-			<div class="baking-time">
-				<h2>ZIP Codes: <?php echo get_field('zip_codes'); ?> </h2>
-			</div>
+    <div class="zip-codes">
+        <h2>ZIP Codes: <?php echo get_field('zip_codes'); ?> </h2>
+    </div>
 
-			<div class="baking-time">
-				<h2>Wheader: <?php echo get_field('weather'); ?> </h2>
-			</div>
-		</div>
-			
+    <div class="weather">
+        <h2>Weather: <?php echo get_field('weather'); ?> </h2>
+    </div>
+</div>
 		
 		<?php
 		wp_link_pages(
