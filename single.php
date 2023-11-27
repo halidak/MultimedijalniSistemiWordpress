@@ -10,74 +10,73 @@
 get_header();
 ?>
 <style>
-    /* Your existing styles */
+    body {
+    text-align: center;
+}
 
-    .nav-title {
-        color: #ef4229;
-        text-transform: uppercase;
-    }
+#primary {
+    display: inline-block;
+    text-align: left;
+    max-width: 1200px; /* Set a maximum width for the content */
+    width: 100%;
+    margin: 0 auto; /* Center the content */
+}
 
-    .comments {
-        border: 1px solid #ef4229;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
+article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
 
-    main#primary {
-        margin: 20px;
-    }
+.entry-title {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
-    article {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
+.entry-meta {
+    margin-bottom: 15px;
+    text-align: center;
+}
 
-    .post-thumbnail {
-        margin-bottom: 15px;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+.entry-content {
+    line-height: 1.6;
+}
 
-    .post-thumbnail img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
+.post-thumbnail {
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .entry-title {
-        color: #333;
-        font-size: 1.5em;
-        margin-bottom: 10px;
-        text-align: center; /* Center the title */
-    }
+.post-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
-    .entry-meta {
-        margin-bottom: 15px;
-        text-align: center; /* Center the meta information */
-    }
+.comments {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
 
-    .entry-content {
-        line-height: 1.6;
-    }
+.post-navigation {
+    margin-top: 20px;
+}
 
-    .post-navigation {
-        margin-top: 20px;
-    }
-
-    .nav-subtitle,
-    .nav-title {
-        display: block;
-        font-size: 1.2em;
-        margin-bottom: 5px;
-    }
-
-    
+.nav-subtitle,
+.nav-title {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
 </style>
 
 
