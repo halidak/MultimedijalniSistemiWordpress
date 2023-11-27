@@ -32,7 +32,7 @@
 		margin: 0 auto;
 	}
 	.site-header-logo{
-		background-color: #8583BD;
+		background-color: #8A70C2;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
@@ -44,7 +44,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-	background-color: #8583BD;
+	background-color: #6A5090;
 	justify-content: center;
 }
 
@@ -77,7 +77,7 @@
 		top: 100%;
 		left: 0;
 		display: none;
-		background-color: #ef43297e;
+		background-color: #6A5090;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	}
 
