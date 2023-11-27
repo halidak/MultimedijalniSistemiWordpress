@@ -4,22 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mms
+ * @package MultimedijalniSistemi
  */
 
 ?>
-<style>
-	.slika{
-		width: 100%;
-		height: 400px;
-		object-fit: cover;
-	}
-	.post-thumbnail{
-		width: 100%;
-		height: 400px;
-	}
-</style>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -62,7 +51,31 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
+		?>
+		<div class="basic">
+			<div class="baking-time">
+				<h2>Population: <?php echo get_field('population'); ?> </h2>
+			</div>
 
+			<div class="baking-time">
+				<h2>Land Area: <?php echo get_field('land_area'); ?> </h2>
+			</div>
+
+			<div class="baking-time">
+				<h2>Local time: <?php echo get_field('local_time'); ?> </h2>
+			</div>
+
+			<div class="baking-time">
+				<h2>ZIP Codes: <?php echo get_field('zip_codes'); ?> </h2>
+			</div>
+
+			<div class="baking-time">
+				<h2>Wheader: <?php echo get_field('weather'); ?> </h2>
+			</div>
+		</div>
+			
+		
+		<?php
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'multimedijalnisistemi' ),
