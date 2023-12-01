@@ -1,14 +1,13 @@
-.widget-area {
+/* Stilizujte celu widget oblast */
+.widget-area2 {
+    margin-top: 20px;
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.widget {
-    margin-bottom: 20px;
-}
-
+/* Stilizujte search formu unutar widget oblasti */
 .widget_search input[type="search"] {
     width: 100%;
     padding: 10px;
@@ -28,4 +27,66 @@
 
 .widget_search button:hover {
     background-color: #555;
+}
+
+/* Stilizujte sve widgete unutar widget oblasti */
+.widget {
+    margin-bottom: 20px;
+}
+
+/* Stilizujte dodatne detalje u listi sa recentnim postovima */
+.wp-block-latest-posts__list {
+    list-style: none;
+    padding: 0;
+}
+
+.wp-block-latest-posts__post-title {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+}
+
+.wp-block-latest-posts__post-title:hover {
+    color: #555;
+}
+
+/* Stilizujte dodatne detalje u listi sa recentnim komentarima */
+.wp-block-latest-comments {
+    list-style: none;
+    padding: 0;
+}
+
+.wp-block-latest-comments__comment {
+    margin-bottom: 10px;
+}
+
+.wp-block-latest-comments__comment-author,
+.wp-block-latest-comments__comment-link {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.wp-block-latest-comments__comment-author:hover,
+.wp-block-latest-comments__comment-link:hover {
+    color: #555;
+}
+
+/* Dodajte malo dodatnog prostora između kategorija */
+.wp-block-categories-list a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+}
+
+.wp-block-categories-list a:hover {
+    color: #555;
+}
+
+/* Stilizujte video embed */
+.wp-block-embed-youtube {
+    margin-bottom: 20px;
 }

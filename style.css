@@ -195,6 +195,8 @@ sup {
 	vertical-align: baseline;
 }
 
+
+
 sub {
 	bottom: -0.25em;
 }
@@ -206,9 +208,103 @@ sup {
     width: 30%;
     float: right;
     list-style: none;
-    margin-top: auto;
     font-size: 14px;
     padding: 15px;
+}
+
+/* Widget Area */
+/* Stilizujte celu widget oblast */
+.widget-area2 {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilizujte search formu unutar widget oblasti */
+.widget_search input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.widget_search button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.widget_search button:hover {
+    background-color: #555;
+}
+
+/* Stilizujte sve widgete unutar widget oblasti */
+.widget {
+    margin-bottom: 20px;
+}
+
+/* Stilizujte naslove widgeta */
+.widget-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Stilizujte listu sa recentnim postovima */
+.widget_block h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Stilizujte listu sa recentnim postovima */
+.wp-block-latest-posts__post-title {
+    color: #333;
+    text-decoration: none;
+}
+
+.wp-block-latest-posts__post-title:hover {
+    color: #555;
+}
+
+/* Stilizujte listu sa recentnim komentarima */
+.wp-block-latest-comments__comment-author,
+.wp-block-latest-comments__comment-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.wp-block-latest-comments__comment-author:hover,
+.wp-block-latest-comments__comment-link:hover {
+    color: #555;
+}
+
+/* Stilizujte kategorije */
+.wp-block-categories-list a {
+    color: #333;
+    text-decoration: none;
+}
+
+.wp-block-categories-list a:hover {
+    color: #555;
+}
+
+/* Stilizujte video embed */
+.wp-block-embed-youtube {
+    width: 100%;
+}
+
+.widget {
+    margin-bottom: 20px;
+}
+
+/* Style the Title of Widgets */
+.widget-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 /* Embedded content
@@ -964,6 +1060,7 @@ textarea {
 #secondary {
     float: right;
     width: 25%;
+	background-color: green;
 }
 
 /* Add media query for responsiveness */
