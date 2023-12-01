@@ -135,6 +135,61 @@ function multimedijalnisistemi_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( ' Sidebar 2', 'multimedijalnisistemi' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add widgets here.', 'multimedijalnisistemi' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( ' Sidebar 3', 'multimedijalnisistemi' ),
+			'id'            => 'sidebar-3',
+			'description'   => esc_html__( 'Add widgets here.', 'multimedijalnisistemi' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar( 
+		array(
+			'name'			=> 'Footer Sidebar 1',
+			'id'			=> 'sidebar-footer1',
+			'description'	=> 'Drag and drop your widgets here',
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">', 
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		) 
+	);
+	register_sidebar( 
+		array(
+		'name'			=> 'Footer Sidebar 2',
+		'id'			=> 'sidebar-footer2',
+		'description'	=> 'Drag and drop your widgets here',
+		'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">', 
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h4 class="widget-title">',
+		'after_title'	=> '</h4>',
+		) 
+	);
+	register_sidebar( 
+		array(
+		'name'			=> 'Footer Sidebar 3',
+		'id'			=> 'sidebar-footer3',
+		'description'	=> 'Drag and drop your widgets here',
+		'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">', 
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h4 class="widget-title">',
+		'after_title'	=> '</h4>',
+		)
+	);	
 }
 add_action( 'widgets_init', 'multimedijalnisistemi_widgets_init' );
 

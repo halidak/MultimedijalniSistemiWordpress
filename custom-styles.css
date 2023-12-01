@@ -9,7 +9,7 @@
 
 /* Stilizujte search formu unutar widget oblasti */
 .widget_search input[type="search"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ddd;
@@ -29,44 +29,69 @@
     background-color: #555;
 }
 
+/* Stilizujte celu pretragu formu */
+.search-form {
+    margin-bottom: 20px;
+}
+
+/* Stilizujte polje za unos teksta u pretrazi */
+.search-form input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Stilizujte dugme za slanje pretrage */
+.search-form input[type="submit"] {
+    background-color: #333;
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover efekat na dugmetu za slanje pretrage */
+.search-form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+
 /* Stilizujte sve widgete unutar widget oblasti */
 .widget {
     margin-bottom: 20px;
 }
 
-/* Stilizujte dodatne detalje u listi sa recentnim postovima */
-.wp-block-latest-posts__list {
-    list-style: none;
-    padding: 0;
+/* Stilizujte naslove widgeta */
+.widget-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
+/* Stilizujte listu sa recentnim postovima */
+.widget_block h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Stilizujte listu sa recentnim postovima */
 .wp-block-latest-posts__post-title {
     color: #333;
     text-decoration: none;
-    display: block;
-    padding: 8px 0;
 }
 
 .wp-block-latest-posts__post-title:hover {
     color: #555;
 }
 
-/* Stilizujte dodatne detalje u listi sa recentnim komentarima */
-.wp-block-latest-comments {
-    list-style: none;
-    padding: 0;
-}
-
-.wp-block-latest-comments__comment {
-    margin-bottom: 10px;
-}
-
+/* Stilizujte listu sa recentnim komentarima */
 .wp-block-latest-comments__comment-author,
 .wp-block-latest-comments__comment-link {
     color: #333;
     text-decoration: none;
-    display: inline-block;
-    margin-right: 5px;
 }
 
 .wp-block-latest-comments__comment-author:hover,
@@ -74,12 +99,10 @@
     color: #555;
 }
 
-/* Dodajte malo dodatnog prostora između kategorija */
+/* Stilizujte kategorije */
 .wp-block-categories-list a {
     color: #333;
     text-decoration: none;
-    display: block;
-    padding: 8px 0;
 }
 
 .wp-block-categories-list a:hover {
@@ -88,5 +111,5 @@
 
 /* Stilizujte video embed */
 .wp-block-embed-youtube {
-    margin-bottom: 20px;
+    width: 100%;
 }
