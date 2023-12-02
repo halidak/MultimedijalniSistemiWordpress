@@ -365,6 +365,136 @@ add_action( 'widgets_init', 'multimedijalnisistemi_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+ function cd_custom_post_gallery() {
+    register_post_type('gallery',
+        array(
+            'labels' => array(
+                'name' => __('Gallery'),
+                'singular_name' => __('Gallery'),
+                'all_items' => __('All Images'),
+            ),
+            'taxonomies' => array(
+                'category',
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'exclude_from_search' => true,
+            'rewrite' => array('slug' => 'gallery-item'),
+            'supports' => array('title', 'thumbnail'),
+            'menu_position' => 9,
+            'show_in_admin_bar' => true,
+            'show_in_nav_menus' => false,
+            'publicly_queryable' => false,
+            'query_var' => false,
+            'register_meta_box_cb' => 'cd_add_gallery_metabox', // Callback function to add metabox
+        )
+    );
+}
+add_action('init', 'cd_custom_post_gallery');
+
+// Callback function to add metabox for gallery images
+function cd_add_gallery_metabox() {
+    add_meta_box(
+        'cd_gallery_metabox',
+        __('Gallery Images'),
+        'cd_gallery_metabox_callback',
+        'gallery',
+        'normal',
+        'high'
+    );
+}
+
+// Callback function for the gallery metabox
+function cd_gallery_metabox_callback($post) {
+    // Use nonce for verification
+    wp_nonce_field(basename(__FILE__), 'cd_gallery_nonce');
+
+    // Retrieve existing gallery images
+    $gallery_images = get_post_meta($post->ID, '_cd_gallery_images', true);
+
+    ?>
+    <label for="cd_gallery_images"><?php _e('Gallery Images'); ?></label>
+    <input type="button" id="cd_gallery_images_button" class="button" value="<?php _e('Select Images'); ?>">
+    <ul id="cd_gallery_images_list">
+        <?php
+        if (!empty($gallery_images)) {
+            foreach ($gallery_images as $image_id) {
+                echo '<li>' . wp_get_attachment_image($image_id, 'thumbnail') . '</li>';
+            }
+        }
+        ?>
+    </ul>
+    <input type="hidden" id="cd_gallery_images" name="cd_gallery_images" value="<?php echo esc_attr(json_encode($gallery_images)); ?>">
+    <script>
+        jQuery(document).ready(function ($) {
+            // Media uploader script
+            var mediaUploader;
+
+            // Trigger the media uploader
+            $('#cd_gallery_images_button').on('click', function (e) {
+                e.preventDefault();
+                // If the media uploader exists, open it
+                if (mediaUploader) {
+                    mediaUploader.open();
+                    return;
+                }
+                // Create the media uploader
+                mediaUploader = wp.media.frames.file_frame = wp.media({
+                    title: 'Choose Images',
+                    button: {
+                        text: 'Choose Images'
+                    },
+                    multiple: true
+                });
+                // When an image is selected, run a callback
+                mediaUploader.on('select', function () {
+                    var attachments = mediaUploader.state().get('selection').toJSON();
+                    var imageIds = [];
+                    $.each(attachments, function (index, attachment) {
+                        imageIds.push(attachment.id);
+                    });
+                    $('#cd_gallery_images').val(JSON.stringify(imageIds));
+                    $('#cd_gallery_images_list').html('');
+                    $.each(attachments, function (index, attachment) {
+                        $('#cd_gallery_images_list').append('<li>' + attachment.sizes.thumbnail.url + '</li>');
+                    });
+                });
+                // Open the media uploader
+                mediaUploader.open();
+            });
+        });
+    </script>
+    <?php
+}
+
+// Save gallery images when the post is saved
+function cd_save_gallery_images($post_id) {
+    // Verify nonce
+    if (!isset($_POST['cd_gallery_nonce']) || !wp_verify_nonce($_POST['cd_gallery_nonce'], basename(__FILE__))) {
+        return $post_id;
+    }
+
+    // Check if this is an autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return $post_id;
+    }
+
+    // Check the user's permissions.
+    if ('gallery' === $_POST['post_type'] && !current_user_can('edit_page', $post_id)) {
+        return $post_id;
+    }
+
+    // Save the gallery images
+    if (isset($_POST['cd_gallery_images'])) {
+        $gallery_images = json_decode(stripslashes($_POST['cd_gallery_images']));
+        update_post_meta($post_id, '_cd_gallery_images', $gallery_images);
+    }
+}
+
+add_action('save_post', 'cd_save_gallery_images');
+
+
 function multimedijalnisistemi_scripts() {
 	wp_enqueue_style( 'multimedijalnisistemi-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'multimedijalnisistemi-style', 'rtl', 'replace' );
@@ -419,8 +549,8 @@ function create_posttype() {
 		'public' => true,
 		'has_archive' => true,
 		'rewrite' => array('slug' => 'travelPosts'),
-		'taxonomies' => array('category', 'post_tag'),
-
+		'taxonomies' => array('category', 'post_tag', 'feature_image'),
+		'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'gallery'),
 	  )
 	);
   }

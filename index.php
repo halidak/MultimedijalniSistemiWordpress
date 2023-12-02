@@ -202,7 +202,11 @@ get_header();
     height: auto; /* Allow the height to adjust proportionally */
 }
 
-    /* Rest of your styles */
+    .post-thumbnail img {
+        width: 400px !important;
+        height: 300px !important;
+    }
+
 </style>
 
 <header class="page-header">
@@ -264,6 +268,7 @@ get_header();
     <main id="primary" class="site-main">
 
         <?php
+    
         if (have_posts()) :
 
             if (is_home() && !is_front_page()) :
@@ -274,8 +279,6 @@ get_header();
 
                 <?php
             endif;
-
-            /* Start the Loop */
             echo '<div class="article-container">';
             while (have_posts()) :
                 the_post();
@@ -308,6 +311,42 @@ get_header();
 
             get_template_part('template-parts/content', 'none');
 
+        endif;
+        $query_args = array(
+            'post_type' => 'wpll_travelPost',
+            'posts_per_page' => -1, // Display all posts
+        );
+
+        $custom_query = new WP_Query($query_args);
+
+        if ($custom_query->have_posts()) :
+            echo '<div class="article-container">';
+            while ($custom_query->have_posts()) : $custom_query->the_post();
+                ?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class('index-class'); ?>>
+                    <?php
+                   if (has_post_thumbnail()) {
+                    ?>
+                    <div class="post-thumbnail" class="slika>
+                        <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+                            <?php the_post_thumbnail('your-image-size', array('width' => 400, 'height' => 300)); ?>
+                        </a>
+                    </div>
+                    <?php
+                }
+                
+                    ?>
+        
+                    <header class="entry-header">
+                        <?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
+                    </header>
+                </article>
+            <?php
+            endwhile;
+            echo '</div>';
+            wp_reset_postdata();
+        else :
+            echo 'Nema dostupnih objava';
         endif;
         ?>
 

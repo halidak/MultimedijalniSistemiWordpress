@@ -17,7 +17,7 @@ get_header();
     #primary {
         display: inline-block;
         text-align: left;
-        max-width: 1200px; /* Set a maximum width for the content */
+        max-width: 1100px; /* Set a maximum width for the content */
         width: 100%;
         margin: 0 auto; /* Center the content */
     }
