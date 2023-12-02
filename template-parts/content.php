@@ -87,6 +87,9 @@
 		);
 		?>
 		<div class="basic">
+		<div class="population">
+        <h2>Description: <?php echo get_field('description'); ?> </h2>
+    </div>
     <div class="population">
         <h2>Population: <?php echo get_field('population'); ?> </h2>
     </div>
