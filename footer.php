@@ -85,13 +85,19 @@
             </div>
             <div class="footer-section links">
                 <h2>Quick Links</h2>
-                <ul>
+                <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'footer_menu',
+                        'menu_class'     => 'your-menu-class-footer', // Dodajte prilagođenu klasu za stilizovanje menija
+                    ));
+                ?>
+                <!-- <ul>
                     <li>
-						<a href="<?php echo esc_url(home_url('/')); ?>">
-							<p>Home</p>
-						</a>
-					</li>
-                </ul>
+                        <a href="<?php echo esc_url(home_url('/')); ?>">
+                            <p>Početna</p>
+                        </a>
+                    </li>
+                </ul> -->
             </div>
         </div>
     </div>
