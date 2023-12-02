@@ -225,7 +225,10 @@ get_header();
             if (!empty($image_url)) {
                 echo '<div class="slider-item">';
                 echo '<img src="' . esc_url($image_url) . '" alt="Slider Image ' . $i . '">';
-              
+                //print text
+                if (!empty($text)) {
+                    echo '<div class="slider-text">' . wp_kses_post($text) . '</div>';
+                }
                 echo '</div>';
             }
         }
@@ -316,6 +319,8 @@ get_header();
 
 
 </div><!-- .flex-container -->
+<br>
+<br>
 
 <?php
 get_footer();
