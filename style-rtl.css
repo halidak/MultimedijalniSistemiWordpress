@@ -714,6 +714,10 @@ textarea {
 	.main-navigation ul {
 		display: flex;
 	}
+
+	body:not(.admin-bar) html {
+		margin-top: 0 !important;
+	}
 }
 
 .site-main .comment-navigation,

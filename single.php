@@ -68,6 +68,19 @@ get_header();
     .post-thumbnail{
         display: none;
     }
+
+    .site-main{
+        margin-left: 190px !important;
+    }
+
+    @media (max-width: 700px) {
+        .site-main{
+        margin-left: 0px !important;
+    }
+
+    }
+
+
 </style>
 
 <main id="primary" class="site-main">
@@ -101,8 +114,9 @@ get_header();
 <br>
 <br>
 <br>
+
 </main><!-- #main -->
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
 ?>

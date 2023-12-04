@@ -24,7 +24,7 @@
     }
 
 	main#primary {
-        margin: 20px 0; /* Adjust the margin to create space between content and footer */
+        margin: 20px 0;
     }
 
     .container {
