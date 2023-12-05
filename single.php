@@ -73,12 +73,8 @@ get_header();
         margin-left: 190px !important;
     }
 
-    @media (max-width: 700px) {
-        .site-main{
-        margin-left: 0px !important;
-    }
+   
 
-    }
 
 
 </style>

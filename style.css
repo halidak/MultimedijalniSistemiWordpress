@@ -834,17 +834,6 @@ textarea {
 	.main-navigation ul {
 		display: flex;
 	}
-
-	body:not(.admin-bar) html {
-		margin-top: 0 !important;
-	}
-
-	#wpadminbar {
-		margin-top: 0 !important;
-		display: none !important;
-	}
-	
-	
 }
 
 .site-main .comment-navigation,
@@ -1113,11 +1102,6 @@ textarea {
         float: none;
         width: 100%;
     }
-
-	body {
-		margin: 0;
-		padding: 0;
-	}
 }
 
 

@@ -140,7 +140,7 @@ get_header();
         #primary,
         #secondary {
             width: 100%;
-            margin-right: 0; /* Remove margin on smaller screens */
+            margin-right: 0;
         }
 
         #slider-container {

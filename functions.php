@@ -564,9 +564,3 @@ function modify_product_cat_query( $query ){
 add_action( 'pre_get_posts', 'modify_product_cat_query' );
 
 
-
-
-
-
-
-
