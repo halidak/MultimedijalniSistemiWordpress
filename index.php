@@ -140,13 +140,60 @@ get_header();
         #primary,
         #secondary {
             width: 100%;
-            margin-right: 0;
+            margin-right: 0; /* Remove margin on smaller screens */
         }
-
-        #slider-container {
-    height: 200px !important;
-}
+        #primary {
+        width: 100%;
+        margin-right: 0;
     }
+
+    #secondary {
+        width: 100%;
+    }
+
+    .article-container {
+        padding: 0 10px;
+    }
+
+    .naslov {
+        margin-bottom: 10px;
+    }
+
+    .entry-header {
+        max-width: 100%;
+    }
+
+    .entry-title {
+        margin-top: 5px;
+    }
+
+    article {
+        margin: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-thumbnail {
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    #slider-container {
+        height: 300px; /* Prilagodite visinu slidera prema potrebi */
+    }
+
+    .slick-prev,
+    .slick-next {
+        top: 15%;
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .post-thumbnail img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+}
 </style>
 
 <header class="page-header">

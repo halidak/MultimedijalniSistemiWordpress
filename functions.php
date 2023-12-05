@@ -556,11 +556,5 @@ function create_posttype() {
   }
   add_action( 'init', 'create_posttype' );
 
-function modify_product_cat_query( $query ){
-	if(!is_admin() && $query->is_main_query() ) {
-		$query->set('posts_per_page', 4);
-	}
-}
-add_action( 'pre_get_posts', 'modify_product_cat_query' );
 
 
