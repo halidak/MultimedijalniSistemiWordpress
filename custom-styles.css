@@ -5,6 +5,14 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 0 0 25%; /* Adjust as needed */
+}
+
+/* Remove the inline-block and use flex for the primary content */
+#primary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /* Stilizujte search formu unutar widget oblasti */
@@ -14,19 +22,6 @@
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.widget_search button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.widget_search button:hover {
-    background-color: #555;
 }
 
 /* Stilizujte celu pretragu formu */
@@ -58,7 +53,6 @@
 .search-form input[type="submit"]:hover {
     background-color: #555;
 }
-
 
 /* Stilizujte sve widgete unutar widget oblasti */
 .widget {
@@ -112,4 +106,18 @@
 /* Stilizujte video embed */
 .wp-block-embed-youtube {
     width: 100%;
+}
+
+/* New styles for the content */
+#content {
+    flex-grow: 1; /* Allow the content to grow and take remaining space */
+    box-sizing: border-box;
+    padding: 0 20px; /* Add some spacing between content and sidebar */
+    margin-right: 0; /* Remove margin to the right */
+}
+
+#secondary {
+    max-width: 30%; /* Adjust this value based on your design */
+    width: 100%;
+    margin-left: auto; /* Move the sidebar to the right */
 }

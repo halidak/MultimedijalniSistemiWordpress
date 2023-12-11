@@ -1059,8 +1059,8 @@ textarea {
 /* Existing styles */
 
 #secondary {
-    float: right;
-    width: 25%;
+    float: right !important;
+    width: 20% !important;
 }
 
 /* Stilizujte celu pretragu formu */

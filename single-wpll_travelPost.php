@@ -19,7 +19,7 @@ get_header();
     text-align: left;
     max-width: 1100px; /* Set a maximum width for the content */
     width: 100%;
-    margin: 0 auto; /* Center the content */
+    margin: 0 auto !important; /* Center the content */
 }
 
 article {
@@ -113,6 +113,6 @@ article {
 </main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
 ?>

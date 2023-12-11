@@ -644,6 +644,17 @@ function create_posttype() {
         'label' => __('Bcg color', 'your-theme-slug'),
         'section' => 'theme_colors',
     )));
+
+	$wp_customize->add_setting('h_color', array(
+        'default' => '#0a0a0a',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    // Add a control for sidebar color
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'h_color', array(
+        'label' => __('h colors', 'your-theme-slug'),
+        'section' => 'theme_colors',
+    )));
 }
 add_action('customize_register', 'theme_customize');
 function theme_custom() {
@@ -653,6 +664,7 @@ function theme_custom() {
 	// $gradient_color_second = get_theme_mod('gradient_color_second', '#ffffff');
 	$side_bar_color = get_theme_mod('side_bar_color', '#efefef');
 	$bcg_color = get_theme_mod('bcg_color', '#ffffff');
+	$h = get_theme_mod('h_color', '#0a0a0a');
     ?>
     <style>
         body {
@@ -668,13 +680,16 @@ function theme_custom() {
 			border: 1px solid <?php echo esc_attr($color); ?> !important;
 		}
 		/* a {
-			color: <?php echo esc_attr($color); ?> !important;
+			color: <?php echo esc_attr($h); ?> !important;
 		} */
 		h1{
-			color: <?php echo esc_attr($gradient_color_first); ?> !important;
+			color: <?php echo esc_attr($h); ?> !important;
 		}
 		h2{
-			color: <?php echo esc_attr($gradient_color_first); ?> !important;
+			color: <?php echo esc_attr($h); ?> !important;
+		}
+		p{
+			color: <?php echo esc_attr($h); ?> !important;
 		}
 		.your-menu-class {
 			background-color: <?php echo esc_attr($gradient_color_first); ?> !important;
