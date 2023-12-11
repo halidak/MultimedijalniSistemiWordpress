@@ -556,6 +556,7 @@ function create_posttype() {
   }
   add_action( 'init', 'create_posttype' );
 
+
   function theme_customize($wp_customize) {
     // Add a section for colors
     $wp_customize->add_section('theme_colors', array(
@@ -716,4 +717,5 @@ function theme_custom() {
 }
 
 add_action('wp_head', 'theme_custom');
+
 

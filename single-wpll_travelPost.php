@@ -79,7 +79,6 @@ article {
 }
 </style>
 
-
 <main id="primary" class="site-main">
 
     <?php
@@ -87,9 +86,20 @@ article {
         the_post();
 
         // Display the post thumbnail at a specific size
-        
-
         get_template_part('template-parts/content', get_post_type());
+
+        // Prikaz galerije
+        $galerija = get_post_meta(get_the_ID(), '_galerija', true);
+
+        if ($galerija) {
+            $slike = explode(',', $galerija);
+
+            echo '<div class="galerija">';
+            foreach ($slike as $slika) {
+                echo '<img src="' . esc_url($slika) . '" alt="Galerija">';
+            }
+            echo '</div>';
+        }
 
         the_post_navigation(
             array(
@@ -98,7 +108,6 @@ article {
             )
         );
         echo '<div class="comments">';
-            // If comments are open or we have at least one comment, load up the comment template.
             if (comments_open() || get_comments_number()) :
                 comments_template();
             endif;
