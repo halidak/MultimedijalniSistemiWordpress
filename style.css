@@ -1063,6 +1063,15 @@ textarea {
     width: 20% !important;
 }
 
+#primary {
+    width: 70%;
+}
+
+#secondary {
+    width: 25%;
+}
+
+
 /* Stilizujte celu pretragu formu */
 .search-form {
     margin-bottom: 20px;

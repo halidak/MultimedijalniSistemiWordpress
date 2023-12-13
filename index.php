@@ -92,11 +92,11 @@ get_header();
         height: auto;
     }
 
-    .article-container {
+    .article-container2 {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding: 0 20px; /* Adjust the padding */
+        padding: 0 103px
     }
 
     .naslov {
@@ -371,7 +371,7 @@ get_header();
         $custom_query = new WP_Query($query_args);
 
         if ($custom_query->have_posts()) :
-            echo '<div class="article-container">';
+            echo '<div class="article-container2">';
             while ($custom_query->have_posts()) : $custom_query->the_post();
                 ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class('index-class'); ?>>

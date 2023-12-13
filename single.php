@@ -15,8 +15,6 @@ get_header();
     }
 
     #primary {
-        display: inline-block;
-        text-align: left;
         max-width: 1100px; /* Set a maximum width for the content */
         width: 100%;
         margin: 0 auto; /* Center the content */
@@ -65,53 +63,77 @@ get_header();
         margin-bottom: 5px;
     }
 
-    .post-thumbnail{
-        display: none;
-    }
+    #primary {
+    float: left; /* Float the primary content to the left */
+}
 
-    .site-main{
+#secondary {
+    float: right; /* Float the secondary content (sidebar) to the right */
+}
+
+.post-thumbnail {
+    display: none; /* Hide the post thumbnail */
+}
+    /* .site-main{
         margin-left: 190px !important;
-    }
+    } */
 
-   
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+    }
 
 
 
 </style>
 
+<div class="flex-container">
 <main id="primary" class="site-main">
+<?php
+while (have_posts()) :
+    the_post();
 
-    <?php
-    while (have_posts()) :
-        the_post();
+    if (!is_single()) {
+        // Check if it's not a single post page
+        // Display the post thumbnail at a specific size
+        the_post_thumbnail('your-image-size'); // Change 'your-image-size' to your desired image size
+    }
 
-        if (!is_single()) {
-            // Check if it's not a single post page
-            // Display the post thumbnail at a specific size
-            the_post_thumbnail('your-image-size'); // Change 'your-image-size' to your desired image size
-        }
-
-        get_template_part('template-parts/content', get_post_type());
-
+    get_template_part('template-parts/content', get_post_type());
+    ?>
+    <div class="navigation-container">
+        <?php
         the_post_navigation(
             array(
                 'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'multimedijalnisistemi') . '</span> <span class="nav-title">%title</span>',
                 'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'multimedijalnisistemi') . '</span> <span class="nav-title">%title</span>',
             )
         );
-        echo '<div class="comments">';
-        // If comments are open or we have at least one comment, load up the comment template.
-        if (comments_open() || get_comments_number()) :
-            comments_template();
-        endif;
-        echo '</div>';
-    endwhile; // End of the loop.
-    ?>
+        ?>
+    </div>
+    <?php
+    echo '<div class="comments">';
+    // If comments are open or we have at least one comment, load up the comment template.
+    if (comments_open() || get_comments_number()) :
+        comments_template();
+    endif;
+    echo '</div>';
+endwhile; // End of the loop.
+?>
+
 <br>
 <br>
 <br>
 
 </main><!-- #main -->
+<?php
+get_sidebar();
+?>
+<br>
+<br>
+</div>
+<br>
+<br>
 <?php
 // get_sidebar();
 get_footer();
