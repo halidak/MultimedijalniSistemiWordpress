@@ -20,17 +20,20 @@ get_header();
         justify-content: space-between;
     }
 
+    .sub-menu {
+        z-index: 9999; 
+    }
+
     #primary {
-        width: 70%; /* Adjust the width as needed */
+        width: 70%; 
     }
 
     #secondary {
-        width: 25%; /* Adjust the width as needed */
+        width: 25%;
     }
     .page-header img {
         width: 100%;
         height: auto;
-        
     }
 
     .article-container {
@@ -58,7 +61,6 @@ get_header();
     .post-thumbnail{
         padding: 10px 0 10px 10px;
     }
-   
 
     @media (max-width: 768px) {
         .flex-container {

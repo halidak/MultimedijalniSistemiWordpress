@@ -11,35 +11,37 @@ if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
-function theme_customize_register($wp_customize) {
-    $wp_customize->add_section('slider_section', array(
-        'title' => 'Slider',
-        'priority' => 30,
-    ));
 
-    for ($i = 1; $i <= 4; $i++) {
-        $wp_customize->add_setting('slider_image_'.$i, array(
-            'default' => '',
-            'sanitize_callback' => 'esc_url_raw',
-        ));
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'slider_image_'.$i, array(
-            'label' => 'Image '.$i,
-            'section' => 'slider_section',
-            'settings' => 'slider_image_'.$i,
-        )));
+//slajder
+// function theme_customize_register($wp_customize) {
+//     $wp_customize->add_section('slider_section', array(
+//         'title' => 'Slider',
+//         'priority' => 30,
+//     ));
 
-        $wp_customize->add_setting('slider_text_'.$i, array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_text_field',
-        ));
-        $wp_customize->add_control('slider_text_'.$i, array(
-            'label' => 'Text '.$i,
-            'section' => 'slider_section',
-            'type' => 'text',
-        ));
-    }
-}
-add_action('customize_register', 'theme_customize_register');
+//     for ($i = 1; $i <= 4; $i++) {
+//         $wp_customize->add_setting('slider_image_'.$i, array(
+//             'default' => '',
+//             'sanitize_callback' => 'esc_url_raw',
+//         ));
+//         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'slider_image_'.$i, array(
+//             'label' => 'Image '.$i,
+//             'section' => 'slider_section',
+//             'settings' => 'slider_image_'.$i,
+//         )));
+
+//         $wp_customize->add_setting('slider_text_'.$i, array(
+//             'default' => '',
+//             'sanitize_callback' => 'sanitize_text_field',
+//         ));
+//         $wp_customize->add_control('slider_text_'.$i, array(
+//             'label' => 'Text '.$i,
+//             'section' => 'slider_section',
+//             'type' => 'text',
+//         ));
+//     }
+// }
+// add_action('customize_register', 'theme_customize_register');
 
 // Dodajte ovo u functions.php teme
 function enqueue_jquery() {
