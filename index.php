@@ -71,8 +71,6 @@ get_header();
         }
     }
 </style><style>
-    /* Your existing styles */
-
     .flex-container {
         display: flex;
         justify-content: space-between;
@@ -80,7 +78,7 @@ get_header();
 
     #primary {
         width: 70%;
-        margin-right: 20px; /* Add a margin between primary content and sidebar */
+        margin-right: 20px; 
     }
 
     #secondary {
@@ -101,35 +99,33 @@ get_header();
 
     .naslov {
         text-align: center;
-        margin-bottom: 20px; /* Add margin below the title */
+        margin-bottom: 20px;
     }
 
     .entry-header {
         text-align: center;
-        max-width: 100%; /* Allow the title to take full width */
+        max-width: 100%; 
     }
 
     .entry-title {
-        color: #333; /* Adjust the title color */
-        margin-top: 10px; /* Add margin above the title */
+        color: #333; 
+        margin-top: 10px; 
     }
 
     article {
-        background-color: #f9f9f9; /* Adjust the background color */
-        margin: 10px; /* Adjust the margin */
-        /* padding: 15px; Adjust the padding */
-        /* border-radius: 8px; */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the box shadow */
-        transition: background-color 0.3s ease; /* Add a smooth transition */
+        background-color: #f9f9f9; 
+        margin: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease; 
     }
 
     .post-thumbnail {
         padding: 0;
-        margin-bottom: 10px; /* Add margin below the thumbnail */
+        margin-bottom: 10px; 
     }
 
     article:hover {
-        background-color: #fff; /* Change background color on hover */
+        background-color: #fff;
     }
 
     @media (max-width: 768px) {
@@ -145,6 +141,19 @@ get_header();
         #primary {
         width: 100%;
         margin-right: 0;
+        }
+
+        #secondary{
+            display: none;
+        }
+
+        article{
+             width: 281px !important;
+       }
+
+       #slider-container {
+        height: 300px !important;
+        }
     }
 
     #secondary {
@@ -177,10 +186,6 @@ get_header();
         margin-bottom: 5px;
     }
 
-    #slider-container {
-        height: 300px; /* Prilagodite visinu slidera prema potrebi */
-    }
-
     .slick-prev,
     .slick-next {
         top: 15%;
@@ -193,7 +198,6 @@ get_header();
         height: auto !important;
     }
     
-}
 </style>
 
 <header class="page-header">

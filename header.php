@@ -120,7 +120,7 @@
     /* Stilovi za mobilne ekrane */
     @media (max-width: 768px) {
         .site-header-logo {
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
         }
 
