@@ -88,6 +88,12 @@
         color: #fff;
     }
 
+    .your-menu-class li.current-menu-item a,
+    .your-menu-class li.current_page_item a {
+        color: black;
+        font-weight: 1000;
+    }
+
     .your-menu-class ul {
         list-style: none;
         margin: 0;

@@ -83,6 +83,12 @@ get_header();
         justify-content: space-between;
     }
 
+    @media (max-width: 768px)  {
+       #secondary{
+        display: none;
+       }
+    }
+
 
 
 </style>

@@ -81,6 +81,12 @@ get_header();
         display: flex;
         justify-content: space-between;
     }
+
+    @media (max-width: 768px)  {
+       #secondary{
+        display: none;
+       }
+    }
 </style>
 
 <div class="flex-container">
