@@ -90,7 +90,7 @@
 
     .your-menu-class li.current-menu-item a,
     .your-menu-class li.current_page_item a {
-        color: black;
+        color: #2e2043;
         font-weight: 1000;
     }
 

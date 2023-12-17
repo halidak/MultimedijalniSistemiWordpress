@@ -43,14 +43,19 @@ if ( ! defined( '_S_VERSION' ) ) {
 // }
 // add_action('customize_register', 'theme_customize_register');
 
-// Dodajte ovo u functions.php teme
 function enqueue_jquery() {
     wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'enqueue_jquery');
 
+function enqueue_custom_scripts() {
+    wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
-add_filter( 'wp_footer', function ( ) {  ?>
+
+
+/*add_filter( 'wp_footer', function ( ) {  ?>
 	<script>
 	document.querySelectorAll(".wp-slider")?.forEach( slider => {
 		var src = [];
@@ -180,7 +185,7 @@ add_filter( 'wp_footer', function ( ) {  ?>
 	  }
 	}
 	</style>
-	<?php });
+	<?php });*/
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
