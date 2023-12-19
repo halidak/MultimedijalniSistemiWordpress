@@ -304,7 +304,7 @@ get_header();
    $(document).ready(function () {
     // Initialize the Slick slider
     $('#slider-container').slick({
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 300,
         slidesToShow: 1,
